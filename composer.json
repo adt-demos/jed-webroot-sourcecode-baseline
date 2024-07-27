@@ -1,0 +1,38 @@
+{
+  "name": "joomla/jed",
+  "description": "Joomla Extensions Directory",
+  "type": "project",
+  "keywords": [
+    "joomla",
+    "directory",
+    "extensions"
+  ],
+  "homepage": "https://extensions.joomla.org",
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "8.1.0"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "michelf/php-markdown": "^2.0",
+    "ext-simplexml": "*",
+    "ext-dom": "*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.51",
+    "joomla-projects/jorobo": "dev-develop",
+    "squizlabs/php_codesniffer": "^3.9",
+    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan-deprecation-rules": "^1.1"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "composer -d src/administrator/components/com_jed install"
+    ],
+    "post-update-cmd": [
+      "composer -d src/administrator/components/com_jed update"
+    ]
+  }
+}
